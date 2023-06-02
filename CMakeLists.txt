@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(DirectX-Headers
     LANGUAGES CXX
-    VERSION 1.4.9
+    VERSION 1.610.0
 )
 
 set(CMAKE_CXX_STANDARD 14) 
@@ -25,21 +25,23 @@ endif()
 # either via cmake or cmake-gui
 option(DXHEADERS_BUILD_TEST "Build the test" ${IS_TOPLEVEL_PROJECT})
 option(DXHEADERS_INSTALL "Installation logic" ${IS_TOPLEVEL_PROJECT})
+option(DXHEADERS_BUILD_GOOGLE_TEST "Build the google test suite" ${IS_TOPLEVEL_PROJECT})
 
 include(GNUInstallDirs)
 
 # Enables consumers to add this library as a link target to automatically add
 # these include directories, regardless of whether this is referenced via subdirectory
 # or from an installed location
-add_library(DirectX-Headers INTERFACE)
-target_include_directories(DirectX-Headers SYSTEM INTERFACE
+add_library(DirectX-Headers STATIC src/d3dx12_property_format_table.cpp)
+target_include_directories(DirectX-Headers SYSTEM PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
     "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
+target_include_directories(DirectX-Headers PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/directx)
 
 # For non-Windows targets, also add the WSL stubs to the include path
 if (NOT WIN32)
-    target_include_directories(DirectX-Headers SYSTEM INTERFACE
+    target_include_directories(DirectX-Headers SYSTEM PUBLIC
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/wsl/stubs>"
         "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/wsl/stubs>"
     )
@@ -84,4 +86,8 @@ endif()
 
 if (DXHEADERS_BUILD_TEST)
     add_subdirectory(test) 
+endif()
+
+if (DXHEADERS_BUILD_GOOGLE_TEST)
+    add_subdirectory(googletest)
 endif()

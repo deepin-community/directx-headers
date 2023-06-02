@@ -1,3 +1,39 @@
+directx-headers (1.610.2-1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+
+  [ Timo Aaltonen ]
+  * New upstream version.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Sat, 06 May 2023 11:45:21 +0300
+
+directx-headers (1.606.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 01 Sep 2022 08:39:09 +0300
+
+directx-headers (1.606.3+r1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * watch: Updated.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 29 Jul 2022 12:16:24 +0300
+
+directx-headers (1.602.0+r1-1) unstable; urgency=medium
+
+  * New upstream release. (LP: #1975624)
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 01 Jun 2022 00:16:39 +0300
+
+directx-headers (1.600.10-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 02 Feb 2022 15:59:21 +0200
+
 directx-headers (1.4.9-1) unstable; urgency=medium
 
   * New upstream release.

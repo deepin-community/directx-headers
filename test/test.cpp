@@ -1,20 +1,34 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-#ifndef _WIN32
 #include <wsl/winadapter.h>
-#endif
 
 #include <directx/d3d12.h>
+#include <directx/d3d12video.h>
 #include <directx/dxcore.h>
 #include <directx/d3dx12.h>
 #include "dxguids/dxguids.h"
+
+#ifdef __MINGW32__
+STDAPI
+DXCoreCreateAdapterFactory(
+    REFIID riid,
+    _COM_Outptr_ void** ppvFactory
+) {
+    return 0;
+}
+#endif
+
+int check_uuid_linkage() {
+   auto uuid_i_unknown = IID_IUnknown;
+   return sizeof(uuid_i_unknown);
+}
 
 int main()
 {
     IDXCoreAdapter *adapter = nullptr;
     ID3D12Device *device = nullptr;
-
+    check_uuid_linkage();
     {
         IDXCoreAdapterFactory *factory = nullptr;
         if (FAILED(DXCoreCreateAdapterFactory(&factory)))
