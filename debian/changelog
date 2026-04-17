@@ -1,3 +1,27 @@
+directx-headers (1.619.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Mon, 09 Mar 2026 15:10:59 +0200
+
+directx-headers (1.619.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Fri, 27 Feb 2026 12:57:28 +0200
+
+directx-headers (1.618.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Tue, 21 Oct 2025 12:15:26 +0300
+
+directx-headers (1.618.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Timo Aaltonen <tjaalton@debian.org>  Wed, 01 Oct 2025 14:47:58 +0300
+
 directx-headers (1.614.1-1) unstable; urgency=medium
 
   * New upstream release.
